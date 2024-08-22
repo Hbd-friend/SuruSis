@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Title</title>
+        <style>
+            body {
+    margin: 0;
+    padding: 0;
+}
+
+.root {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+       #000044, teal, cyan
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 75vw;
+    height: 70vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px white;
+    border: 5px solid teal;
+}
+
+.image {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    border: 2px dashed teal;
+    margin-top: 20px;
+}
+
+.content {
+    margin-top: 20%;
+    padding: 10%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="root">
+            <div class="card" align="center">
+                <div class="image"></div>
+                <div class="content"></div>
+            </div>
+        </div>
+        
+        
+    <script>
+        
+window.onload = () => {
+    const content = document.querySelector(".content");
+    
+    
+    function typewriter(element, content) {
+        var index = 0
+        function type() {
+            if (content.length == index) {}
+            else {
+            if (content[index] == '&'){
+                element.innerHTML = "";}
+            else{
+                element.innerHTML = element.innerHTML + content[index]
+            
+            }
+            index++;
+            
+            }
+
+        }
+        setInterval(type, 150)
+    }
+    
+    var text = "Hi sis! I know I am late!         &forgive me for that!          &Wish you a very Happy Birthday to you!           &Hope this year heal you from your past and make you more stronger!           &Keep growing, keep learning!           &Happy Birthday Suruchi"
+    typewriter(content, text)
+    
+}
+
+    </script>
+    </body>
+</html>
